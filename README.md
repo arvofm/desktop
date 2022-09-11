@@ -3,7 +3,7 @@
 ### Running with suckless software
 Just some basic patches and configurations applied, so this is just a storage.
 
-### No personal scripts included
+### No personal scripts included (except slstatus)
 Because every script is special for its local machine.
 
 ### Further configurations are within a plan
