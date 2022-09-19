@@ -1,0 +1,4 @@
+#!/bin/bash
+
+prime-run java -jar "$HOME/games/Minecraft.jar"
+
