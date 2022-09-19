@@ -32,10 +32,10 @@ fi
 numlockx on
 xset r rate 195 23
 setxkbmap -layout tr
-export SCRIPTS_DIR="/home/arvo/.scripts"
+export SCRIPTS_DIR="$HOME/.scripts"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
-export XDG_CONFIG_HOME="/home/arvo/.config"
-export JAVA_HOME="/home/arvo/.local/external/java/jdk8u345-full"
+export XDG_CONFIG_HOME="$HOME/.config"
+export JAVA_HOME="$HOME/.local/external/java/jdk8u345-full"
 export PATH="${PATH}:${JAVA_HOME}/bin:${SCRIPTS_DIR}"
 
 
@@ -45,7 +45,7 @@ slstatus &
 batsignal -b -w 20 -c 10 -d 5 -W 'Battery Warning' -C 'Plug The Laptop' -F 'Charged' -M dunstify -b &
 xscreensaver --no-splash &
 dbus-run-session pulseaudio &
-mpd /home/arvo/.config/mpd/mpd.conf &
+mpd $HOME/.config/mpd/mpd.conf &
 picom &
 sxhkd &
 exec dwm
