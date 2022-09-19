@@ -36,7 +36,7 @@ alias ytdlppa="yt-dlp --embed-metadata --embed-thumbnail --embed-subs --write-su
 alias webcam='\mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 
 # a cd navigator
-. /home/arvo/.local/external/z/z.sh
+. $HOME/.local/external/z/z.sh
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
