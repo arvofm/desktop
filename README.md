@@ -37,4 +37,5 @@ Desktop with nvim
 
 #### Then
 ---------
+setmeup.sh is meant to be used for/after a base install when a connection to a network is established.
 Run setmeup.sh inside HOME/repo.
