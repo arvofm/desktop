@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd "${HOME}/.local/external/obsidian/" || exit
+./obsidian.AppImage
+
+exit
