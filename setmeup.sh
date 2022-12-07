@@ -3,7 +3,7 @@
 ## Set all configs and home
 printf "Setting up all configs into HOME folder. \n\n"
 rm -vrf ./screenshots
-mv ./* "$HOME/"
+cp -rv ./* "$HOME/"
 sleep 1
 
 echo "---------------------------------------------"
