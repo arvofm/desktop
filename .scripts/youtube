@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd "$HOME/.local/external/freetube/" || exit
+./freetube.AppImage
+exit
