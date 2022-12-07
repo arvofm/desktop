@@ -337,9 +337,11 @@ printf "Installing slstatus.\n\n"
 sleep 1
 cd "$HOME/.local/external/slstatus" || exit
 sudo make clean install
+cd "$HOME" || exit
 
 echo "---------------------------------------------"
 sleep 2
+rm -rf desktop
 clear
 
 ## all set
