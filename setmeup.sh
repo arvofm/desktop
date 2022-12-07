@@ -8,20 +8,20 @@ rm -vrf ./README.md
 cp -rv ./{.,}* "$HOME/"
 chmod 777 "$HOME/.scripts/*"
 chmod 777 "$HOME/.fehbg"
-sleep 1
+sleep 3
 
 echo "---------------------------------------------"
 
 ## Update all packages
 printf "Updating local packages. \n\n"
-sleep 1
+sleep 3
 sudo xbps-install -Syu
 
 echo "---------------------------------------------"
 
 ## Install necesary packages
 printf "Installing necesary packages. \n\n"
-sleep 1
+sleep 3
 sudo xbps-install -Sy \
 pfetch \
 NetworkManager \
@@ -207,7 +207,7 @@ echo "---------------------------------------------"
 
 ## Establish services
 printf "Establishing services. \n\n"
-sleep 1
+sleep 3
 sudo sv down dhcpcd
 sudo sv down wpa_supplicant
 sudo rm -vrf /var/service/dhcpcd
@@ -229,8 +229,8 @@ sudo sv up polkitd
 echo "---------------------------------------------"
 
 ## Place all externals
-printf "External apps are being installed.\n\n"
-sleep 1
+printf "External apps being installed.\n\n"
+sleep 3
 #### bitwarden
 mkdir -pv "$HOME/.local/external/bitwarden"
 cd "$HOME/.local/external/bitwarden" || exit
@@ -270,7 +270,7 @@ echo "---------------------------------------------"
 
 ## themes and icons
 printf "Installing themes and icons.\n\n"
-sleep 1
+sleep 3
 mkdir -pv "$HOME/.themes"
 cd "$HOME/.themes" || exit
 wget --output-document=catpuccin.zip "https://ocs-dl.fra1.cdn.digitaloceanspaces.com/data/files/1645385518/Catppuccin-Mocha-BL.zip?response-content-disposition=attachment%3B%2520Catppuccin-Mocha-BL.zip&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=RWJAQUNCHT7V2NCLZ2AL%2F20221207%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221207T014317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=0525e6758e857a5344d025e4aa8cf9dd2cf36c93ec78b96b2c94f9e1e854b798"
@@ -290,7 +290,7 @@ echo "---------------------------------------------"
 
 ## setup home folders
 printf "Setting up HOME folders.\n\n"
-sleep 1
+sleep 3
 cd "$HOME" || exit
 mkdir -pv downloads docs games music pics
 
@@ -298,7 +298,7 @@ echo "---------------------------------------------"
 
 ## setup wallpaper
 printf "Setting up wallpaper.\n\n"
-sleep 1
+sleep 3
 mkdir -pv "$HOME/pics/wps"
 cd "$HOME/pics/wps" || exit
 wget --output-document=brown-woman.png "https://w.wallhaven.cc/full/vg/wallhaven-vgmxxl.png"
@@ -308,31 +308,31 @@ echo "---------------------------------------------"
 
 ## update xinit
 printf "Setting up xinit.\n\n"
-sleep 1
+sleep 3
 cat "$HOME/.xinitrc" | sudo tee "/etc/X11/xinit/xinitrc"
 
 echo "---------------------------------------------"
 
 ## install desktop essentials: dwm, dmenu, st, slstatus
 printf "Installing desktop essentials.\n\n"
-sleep 1
+sleep 2
 printf "Installing dwm.\n\n"
-sleep 1
+sleep 3
 cd "$HOME/.local/external/dwm" || exit
 sudo make clean install
 echo "---------------------------------------------"
 printf "Installing dmenu.\n\n"
-sleep 1
+sleep 3
 cd "$HOME/.local/external/dmenu" || exit
 sudo make clean install
 echo "---------------------------------------------"
 printf "Installing st.\n\n"
-sleep 1
+sleep 3
 cd "$HOME/.local/external/st" || exit
 sudo make clean install
 echo "---------------------------------------------"
 printf "Installing slstatus.\n\n"
-sleep 1
+sleep 3
 cd "$HOME/.local/external/slstatus" || exit
 sudo make clean install
 cd "$HOME" || exit
@@ -340,7 +340,7 @@ cd "$HOME" || exit
 echo "---------------------------------------------"
 sleep 2
 printf "Finishing up...\n\n"
-sleep 2
+sleep 5
 rm -rf desktop .bash_history .wget-hsts
 clear
 
