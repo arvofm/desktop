@@ -33,7 +33,6 @@ acpi_call-dkms \
 acpica-utils \
 acpid \
 acpilight \
-light \
 adwaita-icon-theme \
 alsa-lib \
 alsa-plugins-pulseaudio \
