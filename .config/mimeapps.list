@@ -1,0 +1,5 @@
+[Added Associations]
+text/markdown=org.gnome.gedit.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+application/zip=xarchiver.desktop;
+text/plain=org.gnome.gedit.desktop;
