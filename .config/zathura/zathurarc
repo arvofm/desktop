@@ -1,0 +1,9 @@
+
+set selection-clipboard clipboard
+set recolor
+set recolor-lightcolor \#282828
+set default-bg \#282828
+set recolor-darkcolor \#ebdbb2
+set default-fg \#ebdbb2
+set recolor-keephue
+set default-bg 0
