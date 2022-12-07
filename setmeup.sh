@@ -146,7 +146,6 @@ nerd-fonts \
 nicotine+ \
 nodejs \
 numlockx \
-nvidia \
 octave \
 openvpn \
 pamixer \
@@ -197,6 +196,8 @@ zathura-cb \
 zathura-pdf-mupdf \
 cmatrix \
 btop
+
+sudo xbps-install -Sy nvidia
 
 echo "---------------------------------------------"
 
