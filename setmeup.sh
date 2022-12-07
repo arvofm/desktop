@@ -1,9 +1,13 @@
 #!/bin/bash
 
 ## Set all configs and home
-printf "Setting up all configs into HOME folder. \n\n"
+printf "Setting up all configs into HOME folder and adjust executables. \n\n"
 rm -vrf ./screenshots
+rm -vrf ./git
+rm -vrf ./README.md
 cp -rv ./{.,}* "$HOME/"
+chmod 777 "$HOME/.scripts/*"
+chmod 777 "$HOME/.fehbg"
 sleep 1
 
 echo "---------------------------------------------"
@@ -298,7 +302,6 @@ sleep 1
 mkdir -pv "$HOME/pics/wps"
 cd "$HOME/pics/wps" || exit
 wget --output-document=brown-woman.png "https://w.wallhaven.cc/full/vg/wallhaven-vgmxxl.png"
-feh --bg-scale brown-woman.png
 cd "$HOME" || exit
 
 echo "---------------------------------------------"
@@ -307,13 +310,6 @@ echo "---------------------------------------------"
 printf "Setting up xinit.\n\n"
 sleep 1
 cat "$HOME/.xinitrc" | sudo tee "/etc/X11/xinit/xinitrc"
-
-echo "---------------------------------------------"
-
-## setup neovim (hope it works)
-printf "Setting up neovim plugins...\n\n"
-sleep 1
-nvim --headless +PackerCompile +PackerInstall +qall
 
 echo "---------------------------------------------"
 
@@ -343,11 +339,13 @@ cd "$HOME" || exit
 
 echo "---------------------------------------------"
 sleep 2
-rm -rf desktop
+printf "Finishing up...\n\n"
+sleep 2
+rm -rf desktop .bash_history .wget-hsts
 clear
 
 ## all set
-printf "All set... Rebooting"
+printf "\n All set... Rebooting \n\n"
 sleep 1
 printf "."
 sleep 1
