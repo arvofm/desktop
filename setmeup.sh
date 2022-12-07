@@ -52,6 +52,8 @@ bluez \
 bluez-alsa \
 cairo \
 cairomm \
+batsignal \
+gnome-calculator \
 cava \
 celt \
 cowsay \
