@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd "$HOME"/.local/external/Obsidian/ || exit
-./Obsidian-0.15.9.AppImage
-cd "$HOME" && exit
-
