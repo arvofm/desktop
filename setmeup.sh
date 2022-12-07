@@ -6,8 +6,10 @@ rm -vrf ./screenshots
 rm -vrf ./git
 rm -vrf ./README.md
 cp -rv ./{.,}* "$HOME/"
-chmod 777 "$HOME/.scripts/*"
+cd "$HOME/.scripts" || exit
+chmod 777 ./*
 chmod 777 "$HOME/.fehbg"
+cd "$HOME" || exit
 sleep 3
 
 echo "---------------------------------------------"
@@ -345,7 +347,7 @@ rm -rf desktop .bash_history .wget-hsts
 clear
 
 ## all set
-printf "\n All set... Rebooting \n\n"
+printf "\n All set... Rebooting"
 sleep 1
 printf "."
 sleep 1
