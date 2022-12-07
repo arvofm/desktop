@@ -2,8 +2,8 @@
 
 ## Set all configs and home
 printf "Setting up all configs into HOME folder. \n\n"
-rm -rf ./screenshots
-mv ./* "$HOME/"
+rm -vrf ./screenshots
+mv -vrf ./* "$HOME/"
 sleep 1
 
 echo "---------------------------------------------"
@@ -18,7 +18,7 @@ echo "---------------------------------------------"
 ## Install necesary packages
 printf "Installing necesary packages. \n\n"
 sleep 1
-sudo xbps-install -S \
+sudo xbps-install -Sy \
 pfetch \
 NetworkManager \
 NetworkManager-l2tp \
@@ -206,8 +206,8 @@ printf "Establishing services. \n\n"
 sleep 1
 sudo sv down dhcpcd
 sudo sv down wpa_supplicant
-sudo rm -rf /var/service/dhcpcd
-sudo rm -rf /var/service/wpa_supplicant
+sudo rm -vrf /var/service/dhcpcd
+sudo rm -rvf /var/service/wpa_supplicant
 
 sudo ln -s /etc/sv/acpid /var/service
 sudo ln -s /etc/sv/alsa /var/service
@@ -228,51 +228,53 @@ echo "---------------------------------------------"
 printf "External apps are being installed.\n\n"
 sleep 1
 #### bitwarden
-mkdir -p "$HOME/.local/external/bitwarden"
+mkdir -pv "$HOME/.local/external/bitwarden"
 cd "$HOME/.local/external/bitwarden" || exit
 wget  --output-document=bitwarden.AppImage "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=appimage"
 chmod 777 bitwarden.AppImage
 cd "$HOME" || exit
 #### discord
-mkdir -p "$HOME/.local/external/discord"
+mkdir -pv "$HOME/.local/external/discord"
 cd "$HOME/.local/external" || exit
 wget --output-document=discord.tar.gz "https://discord.com/api/download?platform=linux&format=tar.gz"
 tar -xvf discord.tar.gz && rm discord.tar.gz
 mv Discord discord
 cd "$HOME" || exit
 #### freetube
-mkdir -p "$HOME/.local/external/freetube"
+mkdir -pv "$HOME/.local/external/freetube"
 cd "$HOME/.local/external/freetube" || exit
 wget --output-document=freetube.AppImage "https://github.com/FreeTubeApp/FreeTube/releases/download/v0.18.0-beta/FreeTube_0.18.0_amd64.AppImage"
 chmod 777 freetube.AppImage
 cd "$HOME" || exit
 #### obsidian
-mkdir -p "$HOME/.local/external/obsidian"
+mkdir -pv "$HOME/.local/external/obsidian"
 cd "$HOME/.local/external/obsidian" || exit
 wget --output-document=obsidian.AppImage "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.0.3/Obsidian-1.0.3.AppImage"
 chmod 777 obsidian.AppImage
 cd "$HOME" || exit
 #### JDK
-mkdir -p "$HOME/.local/external/JDK"
+mkdir -pv "$HOME/.local/external/JDK"
 cd "$HOME/.local/external/JDK" || exit
 wget --output-document=jdk17.tar.gz "https://download.bell-sw.com/java/17.0.5+8/bellsoft-jdk17.0.5+8-linux-amd64-full.tar.gz"
 tar -xvf jdk17.tar.gz && rm jdk17.tar.gz
 wget --output-document=jdk8.tar.gz "https://download.bell-sw.com/java/8u352+8/bellsoft-jdk8u352+8-linux-amd64-full.tar.gz"
 tar -xvf jdk8.tar.gz && rm jdk8.tar.gz
 
+cd "$HOME" || exit
+
 echo "---------------------------------------------"
 
 ## themes and icons
 printf "Installing themes and icons.\n\n"
 sleep 1
-mkdir -p "$HOME/.themes"
+mkdir -pv "$HOME/.themes"
 cd "$HOME/.themes" || exit
 wget --output-document=catpuccin.zip "https://ocs-dl.fra1.cdn.digitaloceanspaces.com/data/files/1645385518/Catppuccin-Mocha-BL.zip?response-content-disposition=attachment%3B%2520Catppuccin-Mocha-BL.zip&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=RWJAQUNCHT7V2NCLZ2AL%2F20221207%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221207T014317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=0525e6758e857a5344d025e4aa8cf9dd2cf36c93ec78b96b2c94f9e1e854b798"
 unzip catpuccin.zip && rm catpuccin.zip
 wget --output-document=kanagawa.zip "https://ocs-dl.fra1.cdn.digitaloceanspaces.com/data/files/1653852532/Kanagawa-BL.zip?response-content-disposition=attachment%3B%2520Kanagawa-BL.zip&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=RWJAQUNCHT7V2NCLZ2AL%2F20221207%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221207T015119Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=abc50f03e53acd9920a844b5e253df828b309d8c2fcbd671f9857ea958ab37b4"
 unzip kanagawa.zip && rm kanagawa.zip
 cd "$HOME" || exit
-mkdir -p "$HOME/.icons"
+mkdir -pv "$HOME/.icons"
 cd "$HOME/.icons" || exit
 wget --output-document=mocha.zip "https://ocs-dl.fra1.cdn.digitaloceanspaces.com/data/files/1645386593/Catppuccin-Mocha.zip?response-content-disposition=attachment%3B%2520Catppuccin-Mocha.zip&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=RWJAQUNCHT7V2NCLZ2AL%2F20221207%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221207T015430Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=46daf09f7537624dd35dd3998a3885485940c12c5c65812f326688cbfb4742ba"
 unzip mocha.zip && rm mocha.zip
@@ -286,14 +288,14 @@ echo "---------------------------------------------"
 printf "Setting up HOME folders.\n\n"
 sleep 1
 cd "$HOME" || exit
-mkdir downloads docs games music pics
+mkdir -pv downloads docs games music pics
 
 echo "---------------------------------------------"
 
 ## setup wallpaper
 printf "Setting up wallpaper.\n\n"
 sleep 1
-mkdir -p "$HOME/pics/wps"
+mkdir -pv "$HOME/pics/wps"
 cd "$HOME/pics/wps" || exit
 wget --output-document=brown-woman.png "https://w.wallhaven.cc/full/vg/wallhaven-vgmxxl.png"
 feh --bg-scale brown-woman.png
