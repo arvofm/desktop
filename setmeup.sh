@@ -104,6 +104,7 @@ intel-media-driver \
 intel-video-accel \
 json-c \
 json-glib \
+libatomic \
 libSM \
 libX11 \
 libX11-devel \
