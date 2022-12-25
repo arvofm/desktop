@@ -306,7 +306,7 @@ printf "Setting up wallpaper.\n\n"
 sleep 3
 mkdir -pv "$HOME/pics/wps"
 cd "$HOME/pics/wps" || exit
-wget --output-document=brown-woman.png "https://w.wallhaven.cc/full/vg/wallhaven-vgmxxl.png"
+wget --output-document=minimal.png "https://raw.githubusercontent.com/archcraft-os/archcraft-wallpapers/main/archcraft-backgrounds-minimal/files/minimal-27.png"
 cd "$HOME" || exit
 
 echo "---------------------------------------------"
