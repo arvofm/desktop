@@ -30,10 +30,10 @@ Desktop currently uses:
 #### How It Looks Like
 ----------------------
 Desktop with terminal
-![Desktop](./screenshots/1.png)
+![Desktop](./screenshots/s1.png)
 
 Desktop with nvim
-![Nvim](./screenshots/2.png)
+![Nvim](./screenshots/s2.png)
 
 #### Then
 ---------
